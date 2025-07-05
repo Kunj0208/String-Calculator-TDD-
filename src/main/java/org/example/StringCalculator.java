@@ -14,7 +14,14 @@ public class StringCalculator {
 
         if (numbers.startsWith("//")) {
             int delimiterEnd = numbers.indexOf("\n");
-            delimiter = Pattern.quote(numbers.substring(2, delimiterEnd));
+            String delimiterPart = numbers.substring(2, delimiterEnd);
+
+            if (delimiterPart.startsWith("[") && delimiterPart.endsWith("]")) {
+                delimiter = Pattern.quote(delimiterPart.substring(1, delimiterPart.length() - 1));
+            }
+            else {
+                delimiter = Pattern.quote(delimiterPart);
+            }
             numbers = numbers.substring(delimiterEnd + 1);
         }
 
