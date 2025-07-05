@@ -38,3 +38,10 @@ Throw exception on negative numbers.
 
 ![Step 5 Output](images/step5.png)
 
+---
+
+## Step 6
+
+Numbers greater than 1000 are ignored.
+
+![Step 6 Output](images/step6.png)
