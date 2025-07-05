@@ -21,3 +21,11 @@ the Add method to handle an unknown amount of numbers.
 the Add method to handle new lines between numbers.
 
 ![Step 3 Output](images/step3.png)
+
+---
+
+## Step 4
+
+Support different delimiters in the add method.
+
+![Step 4 Output](images/step4.png)
