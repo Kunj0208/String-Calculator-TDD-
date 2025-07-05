@@ -29,3 +29,12 @@ the Add method to handle new lines between numbers.
 Support different delimiters in the add method.
 
 ![Step 4 Output](images/step4.png)
+
+---
+
+## Step 5
+
+Throw exception on negative numbers.
+
+![Step 5 Output](images/step5.png)
+
