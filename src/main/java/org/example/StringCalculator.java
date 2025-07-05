@@ -2,6 +2,7 @@ package org.example;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class StringCalculator {
@@ -15,13 +16,20 @@ public class StringCalculator {
         if (numbers.startsWith("//")) {
             int delimiterEnd = numbers.indexOf("\n");
             String delimiterPart = numbers.substring(2, delimiterEnd);
+            List<String> delimiters = new ArrayList<>();
 
-            if (delimiterPart.startsWith("[") && delimiterPart.endsWith("]")) {
-                delimiter = Pattern.quote(delimiterPart.substring(1, delimiterPart.length() - 1));
+            if (delimiterPart.startsWith("[")) {
+                Pattern pattern = Pattern.compile("\\[(.*?)]");
+                Matcher matcher = pattern.matcher(delimiterPart);
+                while (matcher.find()) {
+                    delimiters.add(Pattern.quote(matcher.group(1)));
+                }
             }
             else {
-                delimiter = Pattern.quote(delimiterPart);
+                delimiters.add(Pattern.quote(delimiterPart));
             }
+
+            delimiter = String.join("|", delimiters);
             numbers = numbers.substring(delimiterEnd + 1);
         }
 
