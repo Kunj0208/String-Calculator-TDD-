@@ -35,4 +35,20 @@ public class StringCalculatorTest {
     public void testCustomDelimiter() {
         assertEquals(3, calculator.add("//;\n1;2"));
     }
+
+    @Test
+    public void testNegativeNumberThrowsException() {
+        Exception exception = assertThrows(IllegalArgumentException.class, () -> {
+            calculator.add("1,-2");
+        });
+        assertEquals("negatives not allowed: -2", exception.getMessage());
+    }
+
+    @Test
+    public void testMultipleNegativesThrowsException() {
+        Exception exception = assertThrows(IllegalArgumentException.class, () -> {
+            calculator.add("-1,2,-3");
+        });
+        assertEquals("negatives not allowed: -1,-3", exception.getMessage());
+    }
 }
