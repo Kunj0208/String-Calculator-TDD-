@@ -45,3 +45,11 @@ Throw exception on negative numbers.
 Numbers greater than 1000 are ignored.
 
 ![Step 6 Output](images/step6.png)
+
+---
+
+## Step 7
+
+Delimiters of any length supported.
+
+![Step 7 Output](images/step7.png)
