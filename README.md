@@ -53,3 +53,11 @@ Numbers greater than 1000 are ignored.
 Delimiters of any length supported.
 
 ![Step 7 Output](images/step7.png)
+
+---
+
+## Step 8
+
+Support multiple delimiters.
+
+![Step 8 Output](images/step8.png)
